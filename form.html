@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Renato Lanches - Fazer Pedido</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style scoped>
+
+
+        .form .none {
+            display: none;
+        }
+
+        .form {
+            width: 90%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin: 0px auto;
+        }
+
+        .form section {
+            margin: 10px 0px;
+            flex-direction: column;
+        }
+
+        .form .saboresMacarrao {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form h1 {
+            font-size: 35px;
+            margin: 0px 0px 10px 0px;
+        }
+
+        .form h2 {
+            font-size: 24px;
+            margin: 17.5px 0px 7.5px 0px;
+            padding: 0px;
+        }
+
+        .form a {
+            margin: 30px auto;
+            width: 95%;
+            height: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        } .form a:hover {
+            background: #febf61;
+            box-shadow: 0px 5px 15px #febf61;
+            transition: all .2s ease-in-out;
+        }
+
+        .form label {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0px 0px 2px 3px;
+            color: #fea116;
+        }
+
+        .form input, .form select {
+            width: 100%;
+            height: 45px;
+            border-radius: 10px;
+            border: 2px solid #0f172b;
+            outline: none;
+            background: transparent;
+            color: #0f172b;
+            margin: 0px 0px 15px 0px;
+            padding: 0px 12.5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .form .flex {
+            width: 100%;
+            height: 40px;
+            margin: 12px 0px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .form .flex input[type="radio"] {
+            width: 28px;
+            height: 28px;
+            border-radius: 0px;
+            margin: 0px 0px 0px 10px;
+        }
+
+        .form .flex label {
+            color: #0f172b;
+        }
+        
+        .form .flex .column {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form .flex .column label {
+            margin: 0px;
+        }
+
+        .form .flex .column p {
+            margin: 0px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+
+        /* CARRINHO */
+
+        .carrinho {
+            width: 100%;
+            height: auto;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin: -50px auto 40px auto;
+            padding: 50px 20px 20px 20px;
+            background: #f1f1f1;
+        }
+
+        .carrinho .itens {
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: -20px auto 15px auto;
+        }
+
+        .carrinho .itens li {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            padding: 20px 20px 20px 20px;
+            background: #fff;
+            box-shadow: 0px 0px 10px #bcbcbc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px auto;
+            color: #0f172b;
+            position: relative;
+        }
+
+        .carrinho .itens li i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            font-size: 40px;
+            color: #febf61;
+            border-radius: 50%;
+            cursor: pointer;
+        } .carrinho .itens li i:hover {
+            background: #ddd;
+        }
+
+        .carrinho .itens li .flex {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .carrinho .itens li .btns {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0px 0px -15px;
+        }
+
+        .carrinho .itens li .btns button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0px 15px;
+        }
+
+        .carrinho .itens li .btns h1 {
+            font-size: 26px;
+            font-weight: 900;
+            margin: 0px 0px 5px 0px;
+        }
+
+        .carrinho .itens li .column {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .carrinho .itens li .column h1 {
+            font-size: 24px;
+            font-weight: 900;
+            margin: 0px 0px 5px 0px;
+        }
+
+        .carrinho .itens li .column h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0px 0px 4px 0px;
+        }
+
+        .carrinho .itens li .flex p {
+            font-size: 20px;
+            font-weight: 500;
+            margin: auto 10px auto 0px;
+            padding: 0px;
+        }
+
+        .carrinho .itens li button {
+            width: 100%;
+            height: 45px;
+            margin: 10px 0px 0px 0px;
+            font-size: 16px;
+            font-weight: 600;
+            background: #febf61;
+            color: #ffffff;
+            border: 2px solid #febf61;
+        } .carrinho .itens li button:hover {
+            background: #febf61;
+            box-shadow: 0px 5px 15px #febf61;
+            transition: all .2s ease-in-out;
+        }
+
+        /* ALERTA MODIFICADO */
+        .swal-modal {
+            background-color: #0f172b;
+            border: 3px solid #febf61;
+            border-radius: 10px;
+        }
+
+        .swal-title {
+            width: 100%;
+            height: 40px;
+            font-size: 18px;
+            color: #febf61;
+            border-bottom: 2px solid #febf61;
+            padding: 0px 0px 20px 0px;
+        }
+
+        .swal-text {
+            color: #febf61;
+            margin: 20px 0px 0px 0px;
+            font-size: 20px;
+        }
+
+        .swal-button {
+            background-color: #febf61;
+            color: #0f172b;
+        } .swal-button--confirm {
+            background-color: #febf61;
+            color: #0f172b;
+        } .swal-button--cancel {
+            background-color: #aa0000;
+            color: white;
+        }
+        
+        
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 style="font-size: 30px;" class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Renato Lanches</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link">Início</a>
+                        <a href="about.html" class="nav-item nav-link">Sobre</a>
+                        <a href="service.html" class="nav-item nav-link">Serviço</a>
+                        <a href="menu.html" class="nav-item nav-link">Cardápio</a>
+                        <a href="contact.html" class="nav-item nav-link">Contato</a>
+                    </div>
+                    <a href="#" class="btn btn-primary py-2 px-4">Pedir agora</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Fazer Pedido</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="./index.html">Início</a></li>
+                            <li class="breadcrumb-item"><a href="#">Paginas</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Pedido</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Carrinho Start -->
+        <div class="carrinho">
+
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h5 class="section-title ff-secondary text-center text-primary fw-normal">Carrinho</h5>
+                <h1 class="mb-5">Pedidos Pendentes</h1>
+            </div>
+
+            <div class="itens">
+                
+            </div>
+
+        </div>
+        <!-- Carrinho End -->
+
+
+        <!-- Form Start -->
+        <div class="form">
+
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h5 class="section-title ff-secondary text-center text-primary fw-normal">Formulario</h5>
+                <h1 class="mb-5">Fazer Pedido</h1>
+            </div>
+
+            <h2 class="ff-secondary text-start text-primary fw-normal">Escolher o Pedido</h2>
+            <select onchange="adicionarPedido()" id="pedido">
+                <option selected value="">Selecionar um Item</option>
+                <option value="Lanche">Lanches</option>
+                <option value="Macarrao">Macarrão na Chapa</option>
+                <option value="Porcao">Porções</option>
+                <option value="Omelete">Omeletes</option>
+            </select>
+
+            <section class="escolherLanche none">
+                <h2 class="ff-secondary text-start text-primary fw-normal">Escolher o Lanche</h2>
+                <select id="lanche">
+                    <option value="">Selecionar um Item</option>
+                    <option value="Hot-Dog Tradicional">Hot-Dog Tradicional</option>
+                    <option value="Hot-Dog Especial">Hot-Dog Especial</option>
+                    <option value="Misto">Misto</option>
+                    <option value="X-Burguer">X-Burguer</option>
+                    <option value="X-Salada">X-Salada</option>
+                    <option value="X-Salada Duplo">X-Salada Duplo</option>
+                    <option value="X-Egg">X-Egg</option>
+                    <option value="X-Calabresa">X-Calabresa</option>
+                    <option value="X-Calabresa Egg">X-Calabresa Egg</option>
+                    <option value="X-Tudo">X-Tudo</option>
+                    <option value="X-Tudo Duplo">X-Tudo Duplo</option>
+                    <option value="X-Frango">X-Frango</option>
+                    <option value="X-Frango Egg">X-Frango Egg</option>
+                    <option value="X-Frango Bacon">X-Frango Bacon</option>
+                    <option value="X-Frango Tudo">X-Frango Tudo</option>
+                    <option value="X-Bacon">X-Bacon</option>
+                    <option value="X-Bacon Tudo">X-Bacon Tudo</option>
+                    <option value="X-Contra Filé">X-Contra Filé</option>
+                    <option value="X-Contra Filé Egg">X-Contra Filé Egg</option>
+                    <option value="X-Contra Filé Bacon">X-Contra Filé Bacon</option>
+                    <option value="X-Contra Filé Tudo">X-Contra Filé Tudo</option>
+                    <option value="Bauru">Bauru</option>
+                </select>
+            </section>
+
+
+            <!-- Macarrão Start -->
+            <section class="escolherMacarrao none">
+
+                <!-- TAMANHO -->
+                <h2 class="ff-secondary text-start text-primary fw-normal">Escolher o Tamanho</h2>
+                <div class="flex">
+                    <div class="column">
+                        <label>Pequeno</label>
+                        <p>R$37,00 a R$42,00</p>
+                    </div>
+                    <input checked onchange="precoMacarracao('pequeno')" type="radio" name="tamanhoMacarrao" value="Pequeno">
+                </div>
+                <div class="flex">
+                    <div class="column">
+                        <label>Grande</label>
+                        <p>R$47,00 a R$52,00</p>
+                    </div>
+                    <input onchange="precoMacarracao('grande')" type="radio" name="tamanhoMacarrao" value="Grande">
+                </div>
+                <br>
+                
+                <!-- SABORES -->
+                <h2 class="ff-secondary text-start text-primary fw-normal">Escolher o Sabor</h2>
+                <div class="saboresMacarrao">
+                    <div class="flex">
+                        <div class="column">
+                            <label>Contra Filé</label>
+                            <p>R$42,00</p>
+                        </div>
+                        <input checked type="radio" name="macarrao" value='{"nome": "Contra Filé", "preco": 42.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Bacon</label>
+                            <p>R$37,00</p>
+                        </div>
+                        <input type="radio" name="macarrao" value='{"nome": "Bacon", "preco": 37.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Frango</label>
+                            <p>R$37,00</p>
+                        </div>
+                        <input type="radio" name="macarrao" value='{"nome": "Frango", "preco": 37.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Calabresa</label>
+                            <p>R$37,00</p>
+                        </div>
+                        <input type="radio" name="macarrao" value='{"nome": "Calabresa", "preco": 37.00}'>
+                    </div>
+                </div>
+
+                <a onclick="adicionarMacarraoAoCarrinho()" class="btn btn-primary py-2 px-4">Finalizar Pedido</a>
+
+            </section>
+            <!-- Macarrão End -->
+
+        </div>
+
+        <!-- Form End -->
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Empresa</h4>
+                        <a class="btn btn-link" href="./about.html">Sobre Nós</a>
+                        <a class="btn btn-link" href="./contact.html">Contato</a>
+                        <a class="btn btn-link" href="./index.html#avaliacao">Avaliação</a>
+                        <a class="btn btn-link" href="#">Política de Privacidade</a>
+                        <a class="btn btn-link" href="#">Termos de Uso</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contato</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Rua José rodrigues do santos 14806467 Araraquara, SP</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+55 (16) 3324-7385</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>contato@renatolanches.com.br</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/loukoporlanches/about?locale=pt_BR"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Horários</h4>
+                        <h5 class="text-light fw-normal">Segunda a Sábado</h5>
+                        <p>18:00 as 00:00</p>
+                        <h5 class="text-light fw-normal">Domingo</h5>
+                        <p>18:00 as 00:00</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Novidades</h4>
+                        <p>Explore o melhor conteúdo diretamente na sua caixa de entrada com nossas novidades</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Seu email">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="https://renato-lanches.netlify.app">renato-lanches.netlify.app</a>, Todos Direitos Reservados. 
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							<br><br> Feito por <a class="border-bottom" href="https://beacons.ai/tecvit" target="_blank">TecVit</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="./index.html">Início</a>
+                                <a href="./about.html">Sobre Nós</a>
+                                <a href="">Ajuda</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+    <!-- CODIGOS -->
+    <script>
+
+        const carrinho = localStorage.getItem('carrinho');
+        const divCarrinho = document.querySelector('.carrinho');
+        if (carrinho && carrinho !== null && carrinho !== '[]') {
+            divCarrinho.style.display = "flex";
+            exibirCarrinho();
+        }
+
+        function adicionarPedido() {
+            const pedido = document.getElementById('pedido').value;
+            const div = document.querySelector(`.escolher${pedido}`)
+            const sections = document.querySelectorAll('.form section');
+            sections.forEach((section) => {
+                section.style.display = "none";
+            });
+            div.style.display = "flex";
+        }
+
+        function precoMacarracao(tamanho) {
+            const div = document.querySelector('.saboresMacarrao');
+            if (tamanho === 'pequeno') {
+                div.innerHTML = `
+                    <div class="flex">
+                        <div class="column">
+                            <label>Contra Filé</label>
+                            <p>R$42,00</p>
+                        </div>
+                        <input checked type="radio" name="macarrao" value='{"nome": "Contra Filé", "preco": 42.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Bacon</label>
+                            <p>R$37,00</p>
+                        </div>
+                        <input type="radio" name="macarrao" value='{"nome": "Bacon", "preco": 37.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Frango</label>
+                            <p>R$37,00</p>
+                        </div>
+                        <input type="radio" name="macarrao" value='{"nome": "Frango", "preco": 37.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Calabresa</label>
+                            <p>R$37,00</p>
+                        </div>
+                        <input type="radio" name="macarrao" value='{"nome": "Calabresa", "preco": 37.00}'>
+                    </div>
+                `;
+            } else if (tamanho === 'grande') {
+                div.innerHTML = `
+                    <div class="flex">
+                        <div class="column">
+                            <label>Contra Filé</label>
+                            <p>R$52,00</p>
+                        </div>
+                        <input checked type="radio" name="macarrao" value='{"nome": "Contra Filé", "preco": 52.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Bacon</label>
+                            <p>R$47,00</p>
+                        </div>
+                        <input type="radio" name="macarrao" value='{"nome": "Bacon", "preco": 47.00}''>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Frango</label>
+                            <p>R$47,00</p>
+                        </div>
+                        <input type="radio" name="macarrao" value='{"nome": "Frango", "preco": 47.00}''>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Calabresa</label>
+                            <p>R$47,00</p>
+                        </div>
+                        <input type="radio" name="macarrao" value='{"nome": "Calabresa", "preco": 47.00}''>
+                    </div>
+                `;
+            }
+            
+        }
+
+
+        async function adicionarMacarraoAoCarrinho() {
+            const macarrao = document.querySelector('input[name="macarrao"]:checked').value;
+            var { nome, preco } = JSON.parse(macarrao);
+            const sabor = nome;
+            const tamanho = document.querySelector('input[name="tamanhoMacarrao"]:checked').value;
+            // Verificar se já há itens no carrinho no localStorage
+            var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            var produtoExistente = await carrinho.find(item =>
+                item.nome === 'Macarrão na Chapa' &&
+                item.preco === preco &&
+                item.sabor === sabor && 
+                item.tamanho === tamanho
+            );
+
+            if (produtoExistente) {
+                // Se o produto já estiver no carrinho, aumentar a quantidade
+                produtoExistente.quantidade++;
+            } else {
+                // Se o produto ainda não estiver no carrinho, adicioná-lo com quantidade 1
+                carrinho.push({ "nome": 'Macarrão na Chapa', preco, sabor, tamanho, quantidade: 1 });
+            }
+            
+            await localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            await window.location.reload();
+        }
+
+        function exibirCarrinho() {
+            var carrinhoLista = document.querySelector('.carrinho .itens');
+            divCarrinho.style.display = 'flex'; // Limpar a lista antes de recriá-la
+            carrinhoLista.innerHTML = ''; // Limpar a lista antes de recriá-la
+
+            // Obter itens do carrinho do localStorage
+            var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            
+            if (!carrinho || carrinho === null || carrinho === '[]') {
+                divCarrinho.style.display = 'none';
+            }
+            // Exibir cada item na lista
+            carrinho.forEach(function (item, index) {
+                const nome = item.nome;
+                const tamanho = item.tamanho;
+                const sabor = item.sabor;
+                const quantidade = item.quantidade;
+                const preco = (item.preco*quantidade).toFixed(2);
+                carrinhoLista.innerHTML += `
+                    <li>
+                        <div class="flex">    
+                            <div class="column">    
+                                <h1>${nome}</h1>
+                                <h2>1x ${tamanho}</h2>
+                                <h2>1x ${sabor}</h2>
+                            </div>
+                            <i onclick="deletarPedido('${index}')" class="bi bi-trash"></i>
+                        </div>
+                        <div style="margin: 10px 0px 0px 0px;align-items: center;" class="flex">
+                            <div class="btns">
+                                <button onclick="removerQuantidade('${index}')">-</button>
+                                <h1 id="quantidade">${quantidade}</h1>
+                                <button onclick="adicionarQuantidade('${index}')">+</button>
+                            </div>
+                            <p>R$${preco}</p>
+                        </div>
+                    </li>
+                `;
+            });
+        }
+
+        async function deletarPedido(index) {
+            swal({
+                title: 'Confirmação',
+                text: 'O item sera Removido, Continuar?',
+                buttons: {
+                    cancel: 'Cancelar',
+                    confirm: 'Confirmar',
+                }
+            }).then(async (confirmacao) => {
+                
+                if (confirmacao) {
+                    // Obter itens do carrinho do localStorage
+                    var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+                    // Remover o item do carrinho com base no índice
+                    carrinho.splice(index, 1);
+
+                    // Atualizar o carrinho no localStorage
+                    await localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+                    await window.location.reload();
+                }
+            })
+        }
+
+
+        async function adicionarQuantidade(index) {
+            // Obter itens do carrinho do localStorage
+            var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            // Aumentar a quantidade do item no carrinho com base no índice
+            carrinho[index].quantidade++;
+
+            // Atualizar o carrinho no localStorage
+            await localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            // Atualizar a exibição do carrinho na página
+            exibirCarrinho();
+        }
+
+        async function removerQuantidade(index) {
+            // Obter itens do carrinho do localStorage
+            var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            // Reduzir a quantidade do item no carrinho com base no índice
+            if (carrinho[index].quantidade > 1) {
+                carrinho[index].quantidade--;
+            } else {
+                // Se a quantidade for 1, remover completamente o item
+                
+            }
+
+            // Atualizar o carrinho no localStorage
+            await localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            // Atualizar a exibição do carrinho na página
+            exibirCarrinho();
+        }
+
+
+
+    </script>
+
+</body>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</html>
