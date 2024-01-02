@@ -30,6 +30,29 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    
+    <!-- CSS -->
+    <style scoped>
+
+        .col-lg-6 {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            margin: 0px;
+        }
+
+        .col-lg-6:hover {
+            background: #ccc;
+            cursor: pointer;
+            transition: all .1s linear;
+        }
+
+        .nav-pills {
+            gap: 20px;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -1019,6 +1042,22 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
+    <script>
+
+        async function fazerPedidoMacarrao(nome, tamanho, preco) {
+            const name = encodeURIComponent(nome);
+            const size = encodeURIComponent(tamanho);
+            window.location.href = await `./form.html?Macarrao=${name}&Tamanho=${size}&Preco=${preco}`;
+        }
+
+        async function fazerPedidoLanche(nome, preco) {
+            window.location.href = await `./form.html?Lanche=${nome}&Preco=${preco}`;
+        }
+
+    </script>
+
 </body>
+
+
 
 </html>
