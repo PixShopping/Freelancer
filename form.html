@@ -457,10 +457,10 @@
                     </div>
                     <div class="flex">
                         <div class="column">
-                            <label>Hot-Dog Especial</label>
+                            <label>Hot Dog Especial</label>
                             <p>R$9,00</p>
                         </div>
-                        <input type="radio" name="lanche" value='{"nome": "Hot-Dog Especial", "preco": 9.00}'>
+                        <input type="radio" name="lanche" value='{"nome": "Hot Dog Especial", "preco": 9.00}'>
                     </div>
                     <div class="flex">
                         <div class="column">
@@ -775,6 +775,47 @@
     <!-- CODIGOS -->
     <script>
 
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "))
+        }
+
+        const pedidoLanche = getParameterByName('Lanche');
+        const pedidoMacarrao = getParameterByName('Macarrao');
+        const inputPedido = document.getElementById('pedido');
+        if (pedidoMacarrao) {
+            const nome = pedidoMacarrao;
+            const tamanho = getParameterByName('Tamanho');
+            const preco = getParameterByName('Preco');
+            const inputTamanhoMacarrao = document.querySelector(`input[value='${tamanho}']`);
+            inputPedido.value = 'Macarrao';
+            adicionarPedido();
+            setTimeout(() => {
+                inputTamanhoMacarrao.checked = true;
+                precoMacarracao(tamanho.toLowerCase());
+                setTimeout(() => {
+                    const inputMacarrao = document.querySelector(`input[value='{"nome": "${nome}", "preco": ${preco}}']`);
+                    inputMacarrao.checked = true;    
+                }, 1000);
+            }, 1000);
+        } else if (pedidoLanche) {
+            const nome = pedidoLanche;
+            const preco = getParameterByName('Preco');
+            const inputLanche = document.querySelector(`input[value='{"nome": "${nome}", "preco": ${preco}}']`);
+            inputPedido.value = 'Lanche';
+            adicionarPedido();
+            setTimeout(() => {
+                inputLanche.checked = true;;
+            }, 1000);
+
+        }
+
         const carrinho = localStorage.getItem('carrinho');
         const divCarrinho = document.querySelector('.carrinho');
         if (carrinho && carrinho !== null && carrinho !== '[]') {
@@ -860,6 +901,9 @@
             
         }
 
+        async function reload() {
+            window.location.href = "./form.html";
+        }
 
         async function adicionarMacarraoAoCarrinho() {
             const macarrao = document.querySelector('input[name="macarrao"]:checked').value;
@@ -888,7 +932,7 @@
             
             await localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-            await window.location.reload();
+            await reload();
         }
 
         async function adicionarLancheAoCarrinho() {
@@ -915,7 +959,7 @@
             
             await localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-            await window.location.reload();
+            await reload();
         }
 
         function exibirCarrinho() {
@@ -1057,7 +1101,7 @@
                     // Atualizar o carrinho no localStorage
                     await localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-                    await window.location.reload();
+                    await reload();
                 }
             })
         }
@@ -1121,18 +1165,16 @@
 var mensagem = `%0D%0A%0D%0A
 *(${index + 1}) Pedido*%0D%0A
 *Nome:* ${nome}%0D%0A
-*Sabor:* ${quantidade}x ${sabor}%0D%0A
-*Observação:* ${observacao}%0D%0A
-*Preço:* R$${preco}`;
+*Sabor:* ${quantidade}x '${sabor}'%0D%0A
+*Observação:* ${observacao}`;
 precoFinal += Number(preco);
                 } else if (nome === 'Macarrão na Chapa') {
 var mensagem = `%0D%0A%0D%0A
 *(${index + 1}) Pedido*%0D%0A
 *Nome:* ${nome}%0D%0A
-*Sabor:* ${quantidade}x ${sabor}%0D%0A
+*Sabor:* ${quantidade}x '${sabor}'%0D%0A
 *Tamanho:* ${tamanho}%0D%0A
-*Observação:* ${observacao}%0D%0A
-*Preço:* R$${preco}`;
+*Observação:* ${observacao}`;
 precoFinal += Number(preco);
                 }             
 
@@ -1143,7 +1185,7 @@ precoFinal += Number(preco);
 
 mensagemPedido += `
 %0D%0A%0D%0A
-*Preço Final:* R$${precoFinal.toFixed(2)}
+*Quanto fica o total?*
 `;
 
             // Aqui você pode enviar a mensagemPedido para o fornecedor
