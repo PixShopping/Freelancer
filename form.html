@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Renato Lanches - Fazer Pedido</title>
+    <title>Renato Lanches - Fazer Pedidos</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -51,7 +51,7 @@
             flex-direction: column;
         }
 
-        .form .saboresMacarrao {
+        .form .saboresMacarrao, .form .saboresLanche {
             width: 100%;
             height: auto;
             display: flex;
@@ -108,6 +108,21 @@
             font-weight: 500;
         }
 
+        .form textarea {
+            width: 100%;
+            height: 70px;
+            border-radius: 10px;
+            border: 2px solid #0f172b;
+            outline: none;
+            background: transparent;
+            color: #0f172b;
+            margin: 4px 0px 15px 0px;
+            padding: 10px 12.5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
         .form .flex {
             width: 100%;
             height: 40px;
@@ -157,9 +172,26 @@
             flex-direction: column;
             align-items: center;
             margin: -50px auto 40px auto;
-            padding: 50px 20px 20px 20px;
+            padding: 50px 20px 50px 20px;
             background: #f1f1f1;
         }
+
+        .carrinho .flex {
+            width: 95%;
+            max-width: 600px;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0px 25px 0px;
+        } .carrinho .flex h1 {
+            font-size: 30px;
+            font-weight: 900;
+        } .carrinho .flex p {
+            font-size: 22px;
+            font-weight: 500;
+        } 
 
         .carrinho .itens {
             position: relative;
@@ -208,6 +240,7 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            margin: 5px 0px;
         }
 
         .carrinho .itens li .btns {
@@ -275,6 +308,13 @@
             transition: all .2s ease-in-out;
         }
 
+        .carrinho .itens li button.cinza {
+            background: #ccc;
+            border: 2px solid #ccc;
+        } .carrinho .itens li button.cinza:hover {
+            box-shadow: none;
+        }
+
         /* ALERTA MODIFICADO */
         .swal-modal {
             background-color: #0f172b;
@@ -307,6 +347,7 @@
             background-color: #aa0000;
             color: white;
         }
+        
         
         
 
@@ -349,7 +390,7 @@
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Fazer Pedido</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Fazer Pedidos</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a href="./index.html">Início</a></li>
@@ -374,6 +415,13 @@
                 
             </div>
 
+            <div class="flex">
+                <h1>Preço Final</h1>
+                <p id="precoFinal">R$0,00</p>
+            </div>
+
+            <a onclick="finalizarCarrinho()" class="btn btn-primary py-2 px-4">Finalizar Pedidos</a>
+
         </div>
         <!-- Carrinho End -->
 
@@ -383,7 +431,7 @@
 
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">Formulario</h5>
-                <h1 class="mb-5">Fazer Pedido</h1>
+                <h1 class="mb-5">Fazer Pedidos</h1>
             </div>
 
             <h2 class="ff-secondary text-start text-primary fw-normal">Escolher o Pedido</h2>
@@ -396,32 +444,179 @@
             </select>
 
             <section class="escolherLanche none">
+                
+                <!-- TIPOS DE LANCHES -->
                 <h2 class="ff-secondary text-start text-primary fw-normal">Escolher o Lanche</h2>
-                <select id="lanche">
-                    <option value="">Selecionar um Item</option>
-                    <option value="Hot-Dog Tradicional">Hot-Dog Tradicional</option>
-                    <option value="Hot-Dog Especial">Hot-Dog Especial</option>
-                    <option value="Misto">Misto</option>
-                    <option value="X-Burguer">X-Burguer</option>
-                    <option value="X-Salada">X-Salada</option>
-                    <option value="X-Salada Duplo">X-Salada Duplo</option>
-                    <option value="X-Egg">X-Egg</option>
-                    <option value="X-Calabresa">X-Calabresa</option>
-                    <option value="X-Calabresa Egg">X-Calabresa Egg</option>
-                    <option value="X-Tudo">X-Tudo</option>
-                    <option value="X-Tudo Duplo">X-Tudo Duplo</option>
-                    <option value="X-Frango">X-Frango</option>
-                    <option value="X-Frango Egg">X-Frango Egg</option>
-                    <option value="X-Frango Bacon">X-Frango Bacon</option>
-                    <option value="X-Frango Tudo">X-Frango Tudo</option>
-                    <option value="X-Bacon">X-Bacon</option>
-                    <option value="X-Bacon Tudo">X-Bacon Tudo</option>
-                    <option value="X-Contra Filé">X-Contra Filé</option>
-                    <option value="X-Contra Filé Egg">X-Contra Filé Egg</option>
-                    <option value="X-Contra Filé Bacon">X-Contra Filé Bacon</option>
-                    <option value="X-Contra Filé Tudo">X-Contra Filé Tudo</option>
-                    <option value="Bauru">Bauru</option>
-                </select>
+                <div class="saboresLanche">
+                    <div class="flex">
+                        <div class="column">
+                            <label>Hot Dog Tradicional</label>
+                            <p>R$6,00</p>
+                        </div>
+                        <input checked type="radio" name="lanche" value='{"nome": "Hot Dog Tradicional", "preco": 6.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Hot-Dog Especial</label>
+                            <p>R$9,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "Hot-Dog Especial", "preco": 9.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Burguer</label>
+                            <p>R$14,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Burguer", "preco": 14.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Salada</label>
+                            <p>R$15,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Salada", "preco": 15.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Misto</label>
+                            <p>R$17,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "Misto", "preco": 17.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Egg</label>
+                            <p>R$17,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Egg", "preco": 17.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Salada Duplo</label>
+                            <p>R$18,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Salada Duplo", "preco": 18.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Calabresa</label>
+                            <p>R$20,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Calabresa", "preco": 20.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Tudo</label>
+                            <p>R$20,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Tudo", "preco": 20.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Calabresa Egg</label>
+                            <p>R$21,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Calabresa Egg", "preco": 21.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Calabresa Tudo</label>
+                            <p>R$22,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Calabresa Tudo", "preco": 22.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Tudo Duplo</label>
+                            <p>R$25,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Tudo Duplo", "preco": 25.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Frango</label>
+                            <p>R$25,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Frango", "preco": 25.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Bacon</label>
+                            <p>R$25,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Bacon", "preco": 25.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Contra Filé</label>
+                            <p>R$25,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Contra Filé", "preco": 25.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Frango Egg</label>
+                            <p>R$26,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Frango Egg", "preco": 26.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Frango Tudo</label>
+                            <p>R$26,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Frango Tudo", "preco": 26.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Contra Filé Egg</label>
+                            <p>R$26,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Contra Filé Egg", "preco": 26.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Contra Filé Tudo</label>
+                            <p>R$27,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Contra Filé Tudo", "preco": 28.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>Bauru</label>
+                            <p>R$27,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "Bauru", "preco": 27.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Bacon Tudo</label>
+                            <p>R$28,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Bacon Tudo", "preco": 28.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Contra Filé Bacon</label>
+                            <p>R$30,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Contra Filé Bacon", "preco": 30.00}'>
+                    </div>
+                    <div class="flex">
+                        <div class="column">
+                            <label>X-Frango Bacon</label>
+                            <p>R$30,00</p>
+                        </div>
+                        <input type="radio" name="lanche" value='{"nome": "X-Frango Bacon", "preco": 30.00}'>
+                    </div>
+                </div>
+
+                <h2 class="ff-secondary text-start text-primary fw-normal">Alguma Observação?</h2>
+                <textarea id="observacaoLanche" placeholder="ex: Sem cebola.."></textarea>
+                
+                <a onclick="adicionarLancheAoCarrinho()" class="btn btn-primary py-2 px-4">Adicionar Pedido</a>
+
+
             </section>
 
 
@@ -479,7 +674,11 @@
                     </div>
                 </div>
 
-                <a onclick="adicionarMacarraoAoCarrinho()" class="btn btn-primary py-2 px-4">Finalizar Pedido</a>
+                <h2 class="ff-secondary text-start text-primary fw-normal">Alguma Observação?</h2>
+                <textarea id="observacaoMacarrao" placeholder="ex: Sem cebola.."></textarea>
+                
+
+                <a onclick="adicionarMacarraoAoCarrinho()" class="btn btn-primary py-2 px-4">Adicionar Pedido</a>
 
             </section>
             <!-- Macarrão End -->
@@ -667,13 +866,16 @@
             var { nome, preco } = JSON.parse(macarrao);
             const sabor = nome;
             const tamanho = document.querySelector('input[name="tamanhoMacarrao"]:checked').value;
+            const observacao = document.getElementById('observacaoMacarrao').value;
+            
             // Verificar se já há itens no carrinho no localStorage
             var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
             var produtoExistente = await carrinho.find(item =>
                 item.nome === 'Macarrão na Chapa' &&
                 item.preco === preco &&
                 item.sabor === sabor && 
-                item.tamanho === tamanho
+                item.tamanho === tamanho &&
+                item.observacao === observacao
             );
 
             if (produtoExistente) {
@@ -681,7 +883,34 @@
                 produtoExistente.quantidade++;
             } else {
                 // Se o produto ainda não estiver no carrinho, adicioná-lo com quantidade 1
-                carrinho.push({ "nome": 'Macarrão na Chapa', preco, sabor, tamanho, quantidade: 1 });
+                carrinho.push({ "nome": 'Macarrão na Chapa', preco, sabor, tamanho, observacao, quantidade: 1 });
+            }
+            
+            await localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            await window.location.reload();
+        }
+
+        async function adicionarLancheAoCarrinho() {
+            const lanche = document.querySelector('input[name="lanche"]:checked').value;
+            var { nome, preco } = JSON.parse(lanche);
+            const sabor = nome;
+            const observacao = document.getElementById('observacaoLanche').value;
+            // Verificar se já há itens no carrinho no localStorage
+            var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            var produtoExistente = await carrinho.find(item =>
+                item.nome === 'Lanche' &&
+                item.preco === preco &&
+                item.sabor === sabor &&
+                item.observacao === observacao
+            );
+
+            if (produtoExistente) {
+                // Se o produto já estiver no carrinho, aumentar a quantidade
+                produtoExistente.quantidade++;
+            } else {
+                // Se o produto ainda não estiver no carrinho, adicioná-lo com quantidade 1
+                carrinho.push({ "nome": 'Lanche', preco, sabor, observacao, quantidade: 1 });
             }
             
             await localStorage.setItem('carrinho', JSON.stringify(carrinho));
@@ -693,7 +922,8 @@
             var carrinhoLista = document.querySelector('.carrinho .itens');
             divCarrinho.style.display = 'flex'; // Limpar a lista antes de recriá-la
             carrinhoLista.innerHTML = ''; // Limpar a lista antes de recriá-la
-
+            var precoFinal = 0;
+            const mostrarPrecoFinal = document.getElementById('precoFinal');
             // Obter itens do carrinho do localStorage
             var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
             
@@ -706,27 +936,104 @@
                 const tamanho = item.tamanho;
                 const sabor = item.sabor;
                 const quantidade = item.quantidade;
-                const preco = (item.preco*quantidade).toFixed(2);
-                carrinhoLista.innerHTML += `
-                    <li>
-                        <div class="flex">    
-                            <div class="column">    
-                                <h1>${nome}</h1>
-                                <h2>1x ${tamanho}</h2>
-                                <h2>1x ${sabor}</h2>
-                            </div>
-                            <i onclick="deletarPedido('${index}')" class="bi bi-trash"></i>
-                        </div>
-                        <div style="margin: 10px 0px 0px 0px;align-items: center;" class="flex">
-                            <div class="btns">
-                                <button onclick="removerQuantidade('${index}')">-</button>
-                                <h1 id="quantidade">${quantidade}</h1>
-                                <button onclick="adicionarQuantidade('${index}')">+</button>
-                            </div>
-                            <p>R$${preco}</p>
-                        </div>
-                    </li>
-                `;
+                const observacao = item.observacao;
+                const preco = (item.preco * quantidade).toFixed(2);
+                if (nome === 'Lanche') {
+                    if (quantidade === 1) {
+                        carrinhoLista.innerHTML += `
+                            <li>
+                                <div class="flex">    
+                                    <div class="column">    
+                                        <h1>${nome}</h1>
+                                        <h2>${quantidade}x ${sabor}</h2>
+                                        <h2>${observacao}</h2>    
+                                    </div>
+                                    <i onclick="deletarPedido('${index}')" class="bi bi-trash"></i>
+                                </div>
+                                <div style="margin: 10px 0px 0px 0px;align-items: center;" class="flex">
+                                    <div class="btns">
+                                        <button class="cinza" onclick="removerQuantidade('${index}')">-</button>
+                                        <h1 id="quantidade">${quantidade}</h1>
+                                        <button onclick="adicionarQuantidade('${index}')">+</button>
+                                    </div>
+                                    <p>R$${preco}</p>
+                                </div>
+                            </li>
+                        `;
+                        precoFinal += Number(preco);
+                    } else {
+                        carrinhoLista.innerHTML += `
+                            <li>
+                                <div class="flex">    
+                                    <div class="column">    
+                                        <h1>${nome}</h1>
+                                        <h2>${quantidade}x ${sabor}</h2>
+                                        <h2>${observacao}</h2>    
+                                    </div>
+                                    <i onclick="deletarPedido('${index}')" class="bi bi-trash"></i>
+                                </div>
+                                <div style="margin: 10px 0px 0px 0px;align-items: center;" class="flex">
+                                    <div class="btns">
+                                        <button onclick="removerQuantidade('${index}')">-</button>
+                                        <h1 id="quantidade">${quantidade}</h1>
+                                        <button onclick="adicionarQuantidade('${index}')">+</button>
+                                    </div>
+                                    <p>R$${preco}</p>
+                                </div>
+                            </li>
+                        `;
+                        precoFinal += Number(preco);
+                    }
+                } else if (nome === 'Macarrão na Chapa') {
+                    if (quantidade === 1) {
+                        carrinhoLista.innerHTML += `
+                            <li>
+                                <div class="flex">    
+                                    <div class="column">    
+                                        <h1>${nome}</h1>
+                                        <h2>${quantidade}x ${sabor}</h2>
+                                        <h2>${tamanho}</h2>
+                                        <h2>${observacao}</h2> 
+                                    </div>
+                                    <i onclick="deletarPedido('${index}')" class="bi bi-trash"></i>
+                                </div>
+                                <div style="margin: 10px 0px 0px 0px;align-items: center;" class="flex">
+                                    <div class="btns">
+                                        <button class="cinza" onclick="removerQuantidade('${index}')">-</button>
+                                        <h1 id="quantidade">${quantidade}</h1>
+                                        <button onclick="adicionarQuantidade('${index}')">+</button>
+                                    </div>
+                                    <p>R$${preco}</p>
+                                </div>
+                            </li>
+                        `;
+                        precoFinal += Number(preco);
+                    } else {
+                        carrinhoLista.innerHTML += `
+                            <li>
+                                <div class="flex">    
+                                    <div class="column">        
+                                        <h1>${nome}</h1>
+                                        <h2>${quantidade}x ${sabor}</h2>
+                                        <h2>${tamanho}</h2>
+                                        <h2>${observacao}</h2> 
+                                    </div>
+                                    <i onclick="deletarPedido('${index}')" class="bi bi-trash"></i>
+                                </div>
+                                <div style="margin: 10px 0px 0px 0px;align-items: center;" class="flex">
+                                    <div class="btns">
+                                        <button onclick="removerQuantidade('${index}')">-</button>
+                                        <h1 id="quantidade">${quantidade}</h1>
+                                        <button onclick="adicionarQuantidade('${index}')">+</button>
+                                    </div>
+                                    <p>R$${preco}</p>
+                                </div>
+                            </li>
+                        `;
+                        precoFinal += Number(preco);
+                    }
+                }
+                mostrarPrecoFinal.innerHTML = `R$${precoFinal.toFixed(2)}`;
             });
         }
 
@@ -784,6 +1091,66 @@
 
             // Atualizar o carrinho no localStorage
             await localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            // Atualizar a exibição do carrinho na página
+            exibirCarrinho();
+        }
+
+
+        async function finalizarCarrinho() {
+            var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            var precoFinal = 0;
+            if (carrinho.length === 0) {
+                alert('Carrinho vazio. Adicione produtos antes de finalizar o pedido.');
+                return;
+            }
+
+            var mensagemPedido = '*Meu Pedido no Renato Lanches*:';
+
+            carrinho.forEach(function (item, index) {
+                var nome = item.nome;
+                var tamanho = item.tamanho;
+                var sabor = item.sabor;
+                var quantidade = item.quantidade;
+                var observacao = item.observacao;
+                if (observacao === '') {
+                    observacao = 'Sem Observação';
+                }
+                var preco = (item.preco * quantidade).toFixed(2);
+                if (nome === 'Lanche') {
+var mensagem = `%0D%0A%0D%0A
+*(${index + 1}) Pedido*%0D%0A
+*Nome:* ${nome}%0D%0A
+*Sabor:* ${quantidade}x ${sabor}%0D%0A
+*Observação:* ${observacao}%0D%0A
+*Preço:* R$${preco}`;
+precoFinal += Number(preco);
+                } else if (nome === 'Macarrão na Chapa') {
+var mensagem = `%0D%0A%0D%0A
+*(${index + 1}) Pedido*%0D%0A
+*Nome:* ${nome}%0D%0A
+*Sabor:* ${quantidade}x ${sabor}%0D%0A
+*Tamanho:* ${tamanho}%0D%0A
+*Observação:* ${observacao}%0D%0A
+*Preço:* R$${preco}`;
+precoFinal += Number(preco);
+                }             
+
+                mensagemPedido += `
+                    ${mensagem}
+                `;
+            });
+
+mensagemPedido += `
+%0D%0A%0D%0A
+*Preço Final:* R$${precoFinal.toFixed(2)}
+`;
+
+            // Aqui você pode enviar a mensagemPedido para o fornecedor
+            window.location.href = `https://wa.me/5516997569308?text=${mensagemPedido}`;
+            
+            // Limpar o carrinho após finalizar o pedido
+            //localStorage.removeItem('carrinho');
 
             // Atualizar a exibição do carrinho na página
             exibirCarrinho();
