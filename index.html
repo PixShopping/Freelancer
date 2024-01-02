@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Renato Lanches - Início</title>
+    <title>Lanchonete - Início</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -47,7 +47,7 @@
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <h1 style="font-size: 30px;" class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Renato Lanches</h1>
+                    <h1 style="font-size: 30px;" class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Lanchonete</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -155,7 +155,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Sobre nós</h5>
-                        <h1 class="mb-4">Bem-Vindo ao <br><i class="fa fa-utensils text-primary me-2"></i> Renato Lanches</h1>
+                        <h1 class="mb-4">Bem-Vindo a <br><i class="fa fa-utensils text-primary me-2"></i> Lanchonete</h1>
                         <p class="mb-4">Explore o sabor na sua melhor versão em nossa loja de lanches. Oferecemos uma seleção irresistível de opções deliciosas, preparadas com cuidado e paixão. Sua experiência culinária excepcional começa aqui.</p>
                         <p class="mb-4">Desde os clássicos irresistíveis até criações inovadoras, cada mordida é uma jornada de satisfação. Bem-vindo ao lugar onde o prazer gastronômico ganha vida.</p>
                         <div class="row g-4 mb-4">
@@ -197,10 +197,10 @@
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                         <li class="nav-item">
                             <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
-                                <i class="fa fa-coffee fa-2x text-primary"></i>
+                                <i class="fa fa-utensils fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Popular</small>
-                                    <h6 class="mt-n1 mb-0">Café da manhã</h6>
+                                    <h6 class="mt-n1 mb-0">Macarrão na Chapa</h6>
                                 </div>
                             </a>
                         </li>
@@ -215,215 +215,410 @@
                         </li>
                         <li class="nav-item">
                             <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
-                                <i class="fa fa-utensils fa-2x text-primary"></i>
+                                <i class="fa fa-coffee fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Amável</small>
-                                    <h6 class="mt-n1 mb-0">Jantar</h6>
+                                    <h6 class="mt-n1 mb-0">Porções</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-4">
+                                <i class="fa fa-coffee fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Amável</small>
+                                    <h6 class="mt-n1 mb-0">Omoletes</h6>
                                 </div>
                             </a>
                         </li>
                     </ul>
+                    
+                    <!-- MACARRÃO NA CHAPA -->
                     <div class="tab-content">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoMacarrao('Contra Filé', 'Pequeno', '42.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Hamburguer</span>
-                                                <span class="text-primary">$115</span>
+                                                <span>Contra Filé - Pequeno</span>
+                                                <span class="text-primary">R$42,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">Contra Filé, Tomate, Cebola, Cheiro Verde, Bacon e Mussarela</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoMacarrao('Bacon', 'Pequeno', '37.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Hamburguer</span>
-                                                <span class="text-primary">$115</span>
+                                                <span>Bacon - Pequeno</span>
+                                                <span class="text-primary">R$37,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">Bacon, Tomate, Cebola, Cheiro Verde e Mussarela</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoMacarrao('Frango', 'Pequeno', '37.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Hamburguer</span>
-                                                <span class="text-primary">$115</span>
+                                                <span>Frango - Pequeno</span>
+                                                <span class="text-primary">R$37,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Frango, Tomate, Cebola, Cheiro Verde, Bacon e Mussarela</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoMacarrao('Calabresa', 'Pequeno', '37.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Hamburguer</span>
-                                                <span class="text-primary">$115</span>
+                                                <span>Calabresa - Pequeno</span>
+                                                <span class="text-primary">R$37,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Calabresa, Tomate, Cebola, Cheiro Verde, Bacon e Mussarela</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoMacarrao('Contra Filé', 'Grande', '52.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Hamburguer</span>
-                                                <span class="text-primary">$115</span>
+                                                <span>Contra Filé - Grande</span>
+                                                <span class="text-primary">R$52,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Contra Filé, Tomate, Cebola, Cheiro Verde, Bacon e Mussarela</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoMacarrao('Bacon', 'Grande', '47.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Hamburguer</span>
-                                                <span class="text-primary">R$50</span>
+                                                <span>Bacon - Grande</span>
+                                                <span class="text-primary">R$47,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Bacon, Tomate, Cebola, Cheiro Verde e Mussarela</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoMacarrao('Frango', 'Grande', '47.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Hamburguer</span>
-                                                <span class="text-primary">R$50</span>
+                                                <span>Frango - Grande</span>
+                                                <span class="text-primary">R$47,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Frango, Tomate, Cebola, Cheiro Verde, Bacon e Mussarela</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoMacarrao('Calabresa', 'Grande', '47.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Hamburguer</span>
-                                                <span class="text-primary">R$50</span>
+                                                <span>Calabresa - Grande</span>
+                                                <span class="text-primary">R$47,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Calabresa, Tomate, Cebola, Cheiro Verde, Bacon e Mussarela</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- LANCHES -->
                         <div id="tab-2" class="tab-pane fade show p-0">
                             <div class="row g-4">
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoLanche('Hot Dog Tradicional', '6.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">R$50</span>
+                                                <span>Hot Dog Tradicional</span>
+                                                <span class="text-primary">R$6,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Pão, Molho, Batata e Salsicha</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoLanche('Hot Dog Especial', '9.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">R$50</span>
+                                                <span>Hot Dog Especial</span>
+                                                <span class="text-primary">R$9,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Pão, Molho, Batata, Salsicha e Hambúrguer</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoLanche('X-Burguer', '14.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">R$50</span>
+                                                <span>X-Burguer</span>
+                                                <span class="text-primary">R$14,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Pão, Molho, Batata, Hambúrguer e Mussarela</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoLanche('X-Salada', '15.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">R$50</span>
+                                                <span>X-Salada</span>
+                                                <span class="text-primary">R$15,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Pão, Molho, Batata, Hambúrguer, Mussarela, Alface, Tomate, Cebola, Requeijão e Bacon</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoLanche('Misto', '17.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">R$50</span>
+                                                <span>Misto</span>
+                                                <span class="text-primary">R$17,00</span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic">Pão, Maionese, Presunto, Mussarela e Tomate</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoLanche('X-Egg', '17.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">R$50</span>
+                                                <span>X-Egg</span>
+                                                <span class="text-primary">R$17,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">Pão, Molho, Batata, Hambúrguer, Mussarela, Alface, Tomate, Cebola, Requeijão, Bacon e Ovo</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoLanche('X-Salada Duplo', '18.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">R$50</span>
+                                                <span>X-Salada Duplo</span>
+                                                <span class="text-primary">R$18,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">Pão, Molho, Batata, 2 Hambúrgueres, Mussarela, Alface, Tomate, Cebola, Requeijão e Bacon</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div onclick="fazerPedidoLanche('X-Calabresa', '20.00')" class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span>X-Calabresa</span>
+                                                <span class="text-primary">R$20,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">Pão, Molho, Batata, Hambúrguer, Calabresa, Mussarela, Alface, Tomate, Cebola, Requeijão e Bacon</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Tudo', '20.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Tudo</span>
+                                                <span class="text-primary">R$20,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Hambúrguer, Mussarela, Alface, Tomate, Cebola, Requeijão, Bacon, Ovo e Salsicha</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Calabresa Egg', '21.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Calabresa Egg</span>
+                                                <span class="text-primary">R$21,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Hambúrguer, Calabresa, Mussarela, Alface, Tomate, Cebola, Requeijão, Bacon e Ovo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Calabresa Tudo', '22.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Calabresa Tudo</span>
+                                                <span class="text-primary">R$22,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Hambúrguer, Calabresa, Mussarela, Alface, Tomate, Cebola, Requeijão, Bacon, Ovo e Salsicha</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Tudo Duplo', '25.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Tudo Duplo</span>
+                                                <span class="text-primary">R$25,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, 2 Hambúrgueres, Mussarela, Alface, Tomate, Cebola, Requeijão, Bacon, 2 Ovos e 2 Salsichas</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Frango', '25.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Frango</span>
+                                                <span class="text-primary">R$25,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Frango, Mussarela, Alface, Tomate, Cebola, Requeijão e Bacon</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Bacon', '25.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Bacon</span>
+                                                <span class="text-primary">R$25,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Hambúrguer, Mussarela, Alface, Tomate, Cebola, Requeijão e Bacon</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Contra Filé', '25.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Contra Filé</span>
+                                                <span class="text-primary">R$25,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Contra Filé, Mussarela, Alface, Tomate, Cebola, Requeijão e Bacon</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Frango Egg', '26.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Frango Egg</span>
+                                                <span class="text-primary">R$26,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Frango, Mussarela, Alface, Tomate, Cebola, Requeijão, Bacon e Ovo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Frango Tudo', '26.00')"class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Frango Tudo</span>
+                                                <span class="text-primary">R$26,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Frango, Mussarela, Alface, Tomate, Cebola, Requeijão, Bacon, Salsicha e Ovo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Contra Filé Egg', '26.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Contra Filé Egg</span>
+                                                <span class="text-primary">R$26,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Contra Filé, Mussarela, Alface, Tomate, Cebola, Requeijão, Bacon e Ovo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Contra Filé Tudo', '27.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Contra Filé Tudo</span>
+                                                <span class="text-primary">R$27,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Contra Filé, Mussarela, Alface, Tomate, Cebola, Requeijão, Bacon, Salsicha e Ovo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('Bauru', '27.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Bauru</span>
+                                                <span class="text-primary">R$27,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão Francês, Molho, Contra Filé, Mussarela, Alface e Tomate</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Bacon Tudo', '28.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Bacon Tudo</span>
+                                                <span class="text-primary">R$28,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Hambúrguer, Mussarela, Alface, Tomate, Cebola, Requeijão, Bacon, Salsicha e Ovo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Contra Filé Bacon', '30.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Contra Filé Bacon</span>
+                                                <span class="text-primary">R$30,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Contra Filé, Mussarela, Alface, Tomate, Cebola, Requeijão e Bacon</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onclick="fazerPedidoLanche('X-Frango Bacon', '30.00')" class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>X-Frango Bacon</span>
+                                                <span class="text-primary">R$30,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Pão, Molho, Batata, Frango, Mussarela, Alface, Tomate, Cebola, Requeijão e Bacon</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- PORÇÕES -->
                         <div id="tab-3" class="tab-pane fade show p-0">
                             <div class="row g-4">
                                 <div class="col-lg-6">
@@ -432,9 +627,9 @@
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span class="text-primary">R$00,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">des</small>
                                         </div>
                                     </div>
                                 </div>
@@ -444,9 +639,9 @@
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span class="text-primary">R$00,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">des</small>
                                         </div>
                                     </div>
                                 </div>
@@ -456,9 +651,9 @@
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span class="text-primary">R$00,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">des</small>
                                         </div>
                                     </div>
                                 </div>
@@ -468,9 +663,9 @@
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span class="text-primary">R$00,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">des</small>
                                         </div>
                                     </div>
                                 </div>
@@ -480,9 +675,9 @@
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span class="text-primary">R$00,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">des</small>
                                         </div>
                                     </div>
                                 </div>
@@ -492,9 +687,9 @@
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span class="text-primary">R$00,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">des</small>
                                         </div>
                                     </div>
                                 </div>
@@ -504,9 +699,9 @@
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span class="text-primary">R$00,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">des</small>
                                         </div>
                                     </div>
                                 </div>
@@ -516,14 +711,81 @@
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span class="text-primary">R$00,00</span>
                                             </h5>
-                                            <small class="fst-italic">Delicie-se com nosso hambúrguer irresistível, uma obra-prima de sabores.</small>
+                                            <small class="fst-italic">des</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- OMELETES -->
+                        <div id="tab-4" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Contra Filé</span>
+                                                <span class="text-primary">R$30,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Contra Filé, Ovos, Cheiro Verde, Alface, Tomate, Cebola, Mussarela e Bacon</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Frango</span>
+                                                <span class="text-primary">R$30,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Frango, Ovos, Cheiro Verde, Alface, Tomate, Cebola, Mussarela e Bacon</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Calabresa</span>
+                                                <span class="text-primary">R$30,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Calabresa, Ovos, Cheiro Verde, Alface, Tomate, Cebola, Mussarela e Bacon</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Bacon</span>
+                                                <span class="text-primary">R$30,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Bacon, Ovos, Cheiro Verde, Alface, Tomate, Cebola e Mussarela</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Presunto e Mussarela</span>
+                                                <span class="text-primary">R$30,00</span>
+                                            </h5>
+                                            <small class="fst-italic">Presunto, Ovos, Cheiro Verde, Alface, Tomate, Cebola, Mussarela e Bacon</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
